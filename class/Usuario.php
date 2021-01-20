@@ -48,11 +48,25 @@
             }
 
             if($cont > 0){
-                echo "Usuário encontrado";
+
                 session_start();
+
+
+                $sql = "SELECT * from usuario WHERE email = '$email' and senha = '$senha'";
+
+                $dados = $this->pdo->query($sql)->fetchAll();
+
+                foreach ($dados as $linha) {
+                    $_SESSION['id'] = $linha['id']; //id do usuário
+                }
+
+                echo "Usuário encontrado";
                 header('Location: dashboard.php');
+
             }else{
+
                 echo "Usuário não encontrado";
+
             }
         }
 

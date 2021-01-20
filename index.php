@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <a href="cadastrar-usuario">cadastrar</a>
+    <a href="cadastrar-usuario.php">cadastrar</a>
     <a href="login.php">login</a>
     
 </body>

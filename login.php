@@ -1,6 +1,11 @@
 <?php
 
     include 'class/Usuario.php';
+    session_start();
+
+    if($_SESSION['id']){
+        header('Location: dashboard.php');
+    }else{
 
 ?>
 
@@ -41,3 +46,8 @@
     </body>
 
 </html>
+<?php
+
+        }
+
+?>
