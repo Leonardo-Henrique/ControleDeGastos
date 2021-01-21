@@ -13,7 +13,24 @@ $('#cadastrar_conta').submit(function(e){
         data: {descricao: descricao, valor: valor},
         dataType: 'json'
     }).done(function(result){
+        $('#valor').val('');
+        $('#descricao').val('');
         console.log(result);
     });
 
 })
+
+
+function getComments(){
+
+    $.ajax({
+        url: 'selecionar-contas.php',
+        method: 'GET',
+        dataType: 'json'
+    }).done(function(result){
+        console.log(result);
+    });
+
+}
+
+getComments();

@@ -31,4 +31,17 @@
 
         }
 
+        public function selecionarContas($id){
+
+            $sql = "SELECT * from conta WHERE usuario_id = $id";
+
+            $dados = $this->pdo->query($sql)->fetchAll();
+
+            foreach ($dados as $linha) {
+                echo $linha['descricao'];
+
+            }
+
+        }
+
     }
