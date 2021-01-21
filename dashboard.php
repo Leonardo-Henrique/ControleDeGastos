@@ -22,6 +22,8 @@
 
     <body>
 
+        <a href="sair.php">Sair</a>
+
         <h1>Cadastrar conta</h1>
 
         <form action="" method="post" id="cadastrar_conta">
