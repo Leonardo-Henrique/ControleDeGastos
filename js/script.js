@@ -16,9 +16,10 @@ $('#cadastrar_conta').submit(function(e){
         $('#valor').val('');
         $('#descricao').val('');
         console.log(result);
+        getComments();
     });
 
-})
+});
 
 
 function getComments(){
@@ -28,7 +29,15 @@ function getComments(){
         method: 'GET',
         dataType: 'json'
     }).done(function(result){
+        
         console.log(result);
+
+        for(var i = 0; i < result.length; i++){
+
+            $('.retorno').prepend('<p>'+result[i].descricao+' '+result[i].valor+'</p>');
+        
+        }
+
     });
 
 }

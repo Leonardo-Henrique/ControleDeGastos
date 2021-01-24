@@ -16,6 +16,7 @@
         }
 
         public function cadastrarConta(){
+            header('Content-Type: application/json');
 
             $dadosConta = [
                 'descricao' => $this->descricao,
@@ -32,15 +33,12 @@
         }
 
         public function selecionarContas($id){
+            header('Content-Type: application/json');
 
             $sql = "SELECT * from conta WHERE usuario_id = $id";
 
-            $dados = $this->pdo->query($sql)->fetchAll();
+            echo json_encode($dados = $this->pdo->query($sql)->fetchAll());
 
-            foreach ($dados as $linha) {
-                echo $linha['descricao'];
-
-            }
 
         }
 
