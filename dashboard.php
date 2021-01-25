@@ -4,7 +4,9 @@
 
     if($_SESSION['id']){
         
+    include 'class/Conta.php';
 
+    $totalContas = new Conta(null, null, null);
 
 
 
@@ -35,6 +37,13 @@
 
                 <nav class="menu">
 
+                    <li>
+                     <form class="search">
+                        <i class="fas fa-search"style="color: #b7b7b7;"></i><input type="text" placeholder="Pesquisar por contas">
+                            <!-- <input type="submit">    -->
+                        </form>
+                    </li>
+
                     <li><i class="fas fa-home" style="color: #b7b7b7;"></i><a href="">Dashboard</a></li>
                     <li><i class="fas fa-copy" style="color: #b7b7b7;"></i><a href="">Contas</a></li>
                     <li><i class="fas fa-cog" style="color: #b7b7b7;"></i><a href="">Configurações</a></li>
@@ -47,19 +56,27 @@
             <div class="col-right">
 
                 <div class="header">
-
+                    
+                    
                     <div class="header-l">
-                        <form class="search">
-                        <i class="fas fa-search"></i><input type="text" placeholder="Pesquisar por contas">
-                            <!-- <input type="submit">    -->
+
+                    <span>Cadastrar conta rapidamente</span><br><br>
+
+
+                        <form class="insert-bills" action="" id="cadastrar_conta">
+                            <input type="text" name="descricao" placeholder="Descrição da conta" id="descricao">
+                            <input type="number" name="valor" placeholder="Valor" id="valor">
+                            <input type="submit" name="enviar" value="Adicionar">
+                            <a href="">adicionar detalhes +</a>
                         </form>
+                       
                         <!-- <h1>Olá, Leonardo!</h1>
                         <p>O que vamos fazer hoje?</p> -->
                     </div>
 
                     <div class="header-r">
                         <div class="user">
-                            <span>Leonardo Henrique</span>
+                            <span>Leonardo Henrique </span><i class="fas fa-chevron-down"></i>
                         </div>
                     </div>
                 
@@ -79,7 +96,10 @@
                         <div class="r-l-b1">
 
                             <span class="legend">contas em aberto</span><br>
-                            <span class="value">R$ 330</span>
+
+                            <?php
+                                $totalContas->totalContas($_SESSION['id']);
+                            ?>
 
                         </div>
 
@@ -105,13 +125,22 @@
                     </div>
 
                     <table>
+
                         <tr>
                             <th>Data</th>
                             <th>Descrição</th>
                             <th>Valor</th>
                         </tr>
 
-                        <tr>
+                    </table>
+                    <table class="retorno">
+                        
+
+                        <!-- <tr class="retorno">
+
+                        </tr> -->
+
+                        <!-- <tr>
                             <td>23 de junho</td>
                             <td>Conta de luz</td>
                             <td>R$ 225,20</td>
@@ -139,7 +168,7 @@
                             <td>23 de junho</td>
                             <td>Conta de luz</td>
                             <td>R$ 225,20</td>
-                        </tr>
+                        </tr> -->
                     </table>
 
                 </div>

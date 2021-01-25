@@ -32,9 +32,13 @@ function getComments(){
         
         console.log(result);
 
+        $('.retorno').prepend('<tr><th>Data</th><th>Descrição</th><th>Valor</th></tr>');
+
         for(var i = 0; i < result.length; i++){
 
-            $('.retorno').prepend('<p>'+result[i].descricao+' '+result[i].valor+'</p>');
+            // $('.retorno').prepend('<p>'+result[i].descricao+' '+result[i].valor+'</p>');
+
+            $('.retorno').prepend('<tr><td>'+result[i].data+'</td><td>'+result[i].descricao+'</td><td>R$ '+result[i].valor+'</td></tr>');
         
         }
 
@@ -43,3 +47,4 @@ function getComments(){
 }
 
 getComments();
+

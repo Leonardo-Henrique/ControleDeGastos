@@ -42,4 +42,16 @@
 
         }
 
+        public function totalContas($id){
+
+            $sql = "SELECT sum(valor) from conta WHERE usuario_id = $id";
+
+            $dados = $this->pdo->query($sql)->fetchAll();
+
+            foreach($dados as $linha){
+                echo "<span class='value'>R$ ".$linha['sum(valor)']."</span>";
+            }
+
+        }
+
     }
