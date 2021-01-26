@@ -24,8 +24,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/9ac6cfa819.js" crossorigin="anonymous"></script>
-
-
         
     </head>
 
@@ -39,12 +37,12 @@
 
                     <li>
                      <form class="search">
-                        <i class="fas fa-search"style="color: #b7b7b7;"></i><input type="text" placeholder="Pesquisar por contas">
+                        <i class="fas fa-search"style="color: #b7b7b7;"></i><input type="text" placeholder="Pesquisar por contas" id="pesquisar">
                             <!-- <input type="submit">    -->
                         </form>
                     </li>
 
-                    <li><i class="fas fa-home" style="color: #b7b7b7;"></i><a href="">Dashboard</a></li>
+                    <li class="li-active"><i class="fas fa-home" style="color: #fff;"></i><a href="" style="color:#fff;">Dashboard</a></li>
                     <li><i class="fas fa-copy" style="color: #b7b7b7;"></i><a href="">Contas</a></li>
                     <li><i class="fas fa-cog" style="color: #b7b7b7;"></i><a href="">Configurações</a></li>
                     <li><i class="fas fa-power-off" style="color: #b7b7b7;"></i><a href="sair.php">Sair</a></li>
@@ -52,6 +50,10 @@
                 </nav>
             
             </div><!-- LEFT COLUMN -->
+
+            <div class="col-right-pesquisa">
+            
+            </div>
 
             <div class="col-right">
 
@@ -65,9 +67,10 @@
 
                         <form class="insert-bills" action="" id="cadastrar_conta">
                             <input type="text" name="descricao" placeholder="Descrição da conta" id="descricao">
-                            <input type="number" name="valor" placeholder="Valor" id="valor">
+                            <input type="number" name="valor" placeholder="Valor" id="valor" step="0.01">
                             <input type="submit" name="enviar" value="Adicionar">
                             <a href="">adicionar detalhes +</a>
+                            <div class="clear"></div>
                         </form>
                        
                         <!-- <h1>Olá, Leonardo!</h1>
@@ -198,6 +201,7 @@
         <div class="retorno">
             
         </div> -->
+
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/script.js"></script>
