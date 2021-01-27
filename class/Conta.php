@@ -54,4 +54,22 @@
 
         }
 
+        public function buscarContaSingle($usuario_id, $id_conta){
+            $sql = "SELECT * from conta WHERE usuario_id = $usuario_id and id = $id_conta";
+
+            $dados = $this->pdo->query($sql)->fetchAll();
+
+            foreach($dados as $linha){
+                echo "<div class='data'><span>".$linha['data']."</span></div>";
+                echo "<div class='info-box'><span class='info-title'>Descrição</span><p>".$linha['descricao']."</p>
+            </div>";
+                echo "<div class='info-box'>
+                <span class='info-title'>Valor</span>
+                <p>R$ ".$linha['valor']."</p>
+            </div>";
+            }
+
+
+        }
+
     }

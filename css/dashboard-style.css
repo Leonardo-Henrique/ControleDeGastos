@@ -6,8 +6,8 @@
 }   
 
 html, body{
-    /* width: 100%;
-    height: 100%; */
+    width: 100%;
+    height: 100%;
 }
 
 .container{
@@ -25,7 +25,7 @@ html, body{
     position: fixed;
     width: 16%;
     height: 100%;
-    padding: 2% 1%;
+    padding: 2% 0%;
     float: left;
     background: #fff;
     -webkit-box-shadow: 5px 5px 15px -1px rgba(183,183,183,0.22); 
@@ -40,8 +40,9 @@ html, body{
 
 .menu li{
     list-style: none;
-    padding: 7% 6%;
-    
+    padding: 7% 15%;
+    width: 100%;
+    transition: .7s;
 }
 
 .menu li a{
@@ -54,11 +55,33 @@ html, body{
     transition: 2s;
 }
 
+.li-active{
+    background: #7197fe;
+}
+.a-active{
+    color: #fff;
+}
 .menu li a:hover{
     color: #737373;
     transition: 2s;
 }
+.menu li:hover{
+    cursor: pointer;
+    opacity: .9;
+    transition: .7s;
+}
 
+.col-right-pesquisa{
+    display: none;
+    position: relative;
+    left: 16%;
+    float: left;
+    width: 84%;
+    height: 100%;
+    padding: 2% 4%;
+    /* background: red; */
+    background: #f8f9ff;
+}
 .col-right{
     position: relative;
     left: 16%;
@@ -89,7 +112,13 @@ html, body{
 }
 .insert-bills{
     width: 100%;
-    /* background: red; */
+    /* background: #fff;
+    padding: 2% 4%; */
+}
+.insert-bills a{
+    display: inline-block;
+    float: right;
+    margin-top: 1px;
 }
 .insert-bills input[type='text'], input[type='number']{
     outline: none;
@@ -225,7 +254,11 @@ table th{
     padding: 2%;
     border-bottom: 1px solid #f9f9f9;
 }
-
+table td a{
+    text-decoration: none;
+    font-weight: 900;
+    color: #7197fe;
+}
 .bills-header{
     width: 100%;
     display: inline-block;

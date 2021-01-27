@@ -38,7 +38,7 @@ function getComments(){
 
             // $('.retorno').prepend('<p>'+result[i].descricao+' '+result[i].valor+'</p>');
 
-            $('.retorno').prepend('<tr><td>'+result[i].data+'</td><td>'+result[i].descricao+'</td><td>R$ '+result[i].valor+'</td></tr>');
+            $('.retorno').prepend('<tr><td>'+result[i].data+'</td><td><a href="conta.php?conta='+result[i].id+'">'+result[i].descricao+'</a></td><td>R$ '+result[i].valor+'</td></tr>');
         
         }
 
@@ -47,4 +47,8 @@ function getComments(){
 }
 
 getComments();
+
+
+   
+
 
