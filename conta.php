@@ -73,7 +73,7 @@
 
                         <div class="bills-buttons">
                             <a href="">Editar</a>
-                            <a href="" style="background: #ED303C;">Excluir</a>
+                            <a href='excluir-conta.php?conta=<?php echo $id_Conta;  ?>' style="background: #ED303C;">Excluir</a>
                         </div>
 
                         <div class="clear"></div>

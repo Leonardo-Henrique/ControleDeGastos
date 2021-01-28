@@ -1,0 +1,37 @@
+.bill-single form#cad{
+    width: 100%;
+    padding: 2%;
+    /* background: red; */
+}
+form#cad .inpt-box{
+    width: 50%;
+    float: left;
+    margin-bottom: 2%;
+}
+.inpt-box span{
+    display: block;
+    font-weight: 700    ;
+}
+.inpt-box input[type='text']{
+    padding: 1em 2em;
+    border: none;
+    border-bottom: 2px solid rgb(136, 136, 136);
+    outline: none;
+    transition: 1s;
+}
+.inpt-box input[type='text']:focus{
+    border-bottom: 2px solid#7197fe;
+    transition: 1s;
+}
+
+.inpt-box input[type='submit']{
+    border: none;
+    padding: 7px 12px;
+    border-radius: 5px;
+    background: #7197fe;
+    -webkit-box-shadow: 5px 5px 15px -1px rgba(183,183,183,0.22); 
+    box-shadow: 5px 5px 15px -1px rgba(183,183,183,0.22);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+}

@@ -72,4 +72,15 @@
 
         }
 
+        public function apagarConta($usuario_id, $id_conta){
+
+            $sql = "DELETE FROM conta WHERE usuario_id = $usuario_id and id = $id_conta";
+
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute();
+
+            header("Location: dashboard.php");
+        }
+
     }

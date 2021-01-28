@@ -69,7 +69,7 @@
                             <input type="text" name="descricao" placeholder="Descrição da conta" id="descricao">
                             <input type="number" name="valor" placeholder="Valor" id="valor" step="0.01">
                             <input type="submit" name="enviar" value="Adicionar">
-                            <a href="">adicionar detalhes +</a>
+                            <a href="cadastrar-conta.php">adicionar detalhes +</a>
                             <div class="clear"></div>
                         </form>
                        
