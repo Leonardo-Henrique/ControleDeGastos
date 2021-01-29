@@ -7,7 +7,7 @@
     $descricao = $_POST['descricao'];
     $valor = $_POST['valor'];
 
-    $novaConta = new Conta($descricao, $valor, $_SESSION['id']);
+    $novaConta = new Conta(null, $descricao, $valor, $_SESSION['id'], null);
 
     $novaConta->cadastrarConta();
 

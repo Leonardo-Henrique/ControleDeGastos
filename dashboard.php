@@ -6,7 +6,7 @@
         
     include 'class/Conta.php';
 
-    $totalContas = new Conta(null, null, null);
+    $totalContas = new Conta(null, null, null, null, null);
 
 
 
@@ -131,7 +131,7 @@
 
                         <tr>
                             <th>Data</th>
-                            <th>Descrição</th>
+                            <th>Informação</th>
                             <th>Valor</th>
                         </tr>
 

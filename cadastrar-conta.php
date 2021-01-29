@@ -1,3 +1,8 @@
+<?php
+
+  session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,31 +49,31 @@
 
         <div class="bill-single">
 
-          <form id="cad" action="">
+          <form id="cad" action="" method="post">
 
               <div class="inpt-box">
                 <span>Data</span>
-                <input type="date">
+                <input type="date" name="data">
               </div>
               
 
               <div class="inpt-box">
                 <span>Identificação</span>
-                <input type="text" name="nome" placeholder="">
+                <input type="text" name="nome" placeholder="" name="nome">
               </div>
 
               <div class="inpt-box">
                 <span>Descrição</span>    
-                <input type="text" name="descricao" placeholder="">
+                <input type="text" name="descricao" placeholder="" name="descricao">
               </div>
 
               <div class="inpt-box">
                 <span>Valor</span>
-                <input type="text" name="valor" placeholder="">
+                <input type="text" name="valor" placeholder="" name="valor">
               </div>
 
               <div class="inpt-box">
-                <input type="submit" value="Cadastrar">
+                <input type="submit" value="Cadastrar" name="cadastrar">
               </div>
           </form>
 
@@ -77,9 +82,32 @@
               
             </div>
         </div>
+
+        <?php
+
+          if(isset($_POST['cadastrar'])){
+
+            $data = $_POST['data'];
+            $descricao = $_POST['descricao'];
+            $nome = $_POST['nome'];
+            $valor = $_POST['valor'];
+
+            include 'class/Conta.php';
+
+            $novaConta = new Conta($data, $descricao, $valor, $_SESSION['id'], $nome);
+
+            $novaConta->cadastrarContaCompleta();
+
+
+          }
+
+        ?>
+
     </div>
 
     </div><!-- container -->
+
+    
     
 </body>
 </html>

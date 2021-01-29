@@ -2,19 +2,23 @@
 
     class Conta{
 
-        // public $data;
+        public $data;
         public $descricao;
         public $valor;
         protected $id_usuario;
+        public $nome;
 
-        function __construct($descricao, $valor, $id_usuario){
+        function __construct($data, $descricao, $valor, $id_usuario, $nome){
+            $this->data = $data;
             $this->descricao = $descricao;
             $this->valor = $valor;
             include 'conexao.php';
             $this->pdo = $pdo;
             $this->id = $id_usuario;
+            $this->nome = $nome;
         }
-
+        
+        //cadastro rapido
         public function cadastrarConta(){
             header('Content-Type: application/json');
 
@@ -30,6 +34,25 @@
 
             $stmt->execute($dadosConta);
 
+        }
+
+        public function cadastrarContaCompleta(){
+
+            $dadosConta = [
+                'data'      => $this->data,
+                'descricao' => $this->descricao,
+                'valor'     => $this->valor,
+                'id'        => $this->id,
+                'nome'      => $this->nome
+            ];
+
+            $sql = "INSERT INTO conta (data, descricao, valor, usuario_id, nome) values (:data, :descricao, :valor, :id, :nome)";
+
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute($dadosConta);
+
+            header("Location: dashboard.php");
         }
 
         public function selecionarContas($id){
@@ -60,7 +83,7 @@
             $dados = $this->pdo->query($sql)->fetchAll();
 
             foreach($dados as $linha){
-                echo "<div class='data'><span>".$linha['data']."</span></div>";
+                echo "<div class='data'><span>".implode("/",array_reverse(explode("-",$linha['data'])))."</span></div>";
                 echo "<div class='info-box'><span class='info-title'>Descrição</span><p>".$linha['descricao']."</p>
             </div>";
                 echo "<div class='info-box'>

@@ -9,7 +9,7 @@
 
         $id_Conta = $_GET['conta'];
 
-        $conta = new Conta(null, null, null);
+        $conta = new Conta(null, null, null, null, null);
 
 ?>
 <!DOCTYPE html>

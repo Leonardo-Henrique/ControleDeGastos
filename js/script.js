@@ -32,13 +32,19 @@ function getComments(){
         
         console.log(result);
 
-        $('.retorno').prepend('<tr><th>Data</th><th>Descrição</th><th>Valor</th></tr>');
+        $('.retorno').prepend('<tr><th>Data</th><th>Informação</th><th>Valor</th></tr>');
 
         for(var i = 0; i < result.length; i++){
 
             // $('.retorno').prepend('<p>'+result[i].descricao+' '+result[i].valor+'</p>');
+            
+            if(result[i].nome){
+                $('.retorno').prepend('<tr><td>'+result[i].data+'</td><td><a href="conta.php?conta='+result[i].id+'">'+result[i].nome+'</a></td><td>R$ '+result[i].valor+'</td></tr>');
+            }else{
+                $('.retorno').prepend('<tr><td>'+result[i].data+'</td><td><a href="conta.php?conta='+result[i].id+'">'+result[i].descricao+'</a></td><td>R$ '+result[i].valor+'</td></tr>');
+            }
 
-            $('.retorno').prepend('<tr><td>'+result[i].data+'</td><td><a href="conta.php?conta='+result[i].id+'">'+result[i].descricao+'</a></td><td>R$ '+result[i].valor+'</td></tr>');
+           
         
         }
 
