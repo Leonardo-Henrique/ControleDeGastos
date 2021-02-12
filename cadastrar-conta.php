@@ -2,6 +2,9 @@
 
   session_start();
 
+  $var = 'n';
+  echo $var;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
